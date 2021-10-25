@@ -1,112 +1,65 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
+import React from 'react'
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { View, Text, Button } from 'react-native'
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import HomeLogin from './screens/listScr/homeLogin';
+import Order from './screens/listScr/order'
+import Res from './screens/listScr/restaurant'
+// import Vch from './screens/component/voucher'
+import Login from './screens/listScr/Login'
+import Home from './screens/listScr/home';
+import Vch from './screens/listScr/voucher'
+export default function App() {
 
-import React from 'react';
-import type {Node} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+  const HomeStack = createNativeStackNavigator();
+  const Tab = createBottomTabNavigator();
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
 
-const Section = ({children, title}): Node => {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-};
+  function HomeStackScreen() {
+    return (
+      <HomeStack.Navigator>
+        <HomeStack.Screen name="Home" component={HomeLogin} />
+        <HomeStack.Screen name="Login" component={Login} />
+      </HomeStack.Navigator>
+    );
+  }
 
-const App: () => Node = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-};
+    <NavigationContainer>
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused, color, size }) => {
+            let iconName;
 
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
+            if (route.name === 'Trang chủ') {
+              iconName = focused ? 'home' : 'home-outline';
+            } else if (route.name === 'Đặt hàng') {
+              iconName = focused ? 'order' : 'cafe-outline';
+            } else if (route.name === 'Cửa hàng') {
+              iconName = focused ? 'store' : 'search-outline';
+            } else if (route.name === 'Ưu đãi') {
+              iconName = focused ? 'gift' : 'gift-outline';
+            } else if (route.name === 'Khác') {
+              iconName = focused ? 'reorder' : 'reorder-four-outline';
+            }
 
-export default App;
+            // You can return any component that you like here!
+            return <Ionicons name={iconName} size={size} color={color} />;
+          },
+          tabBarActiveTintColor: 'tomato',
+          tabBarInactiveTintColor: 'gray',
+          headerShown: false,
+        })}
+      >
+        <Tab.Screen name="Trang chủ" component={HomeStackScreen} />
+        <Tab.Screen name="Đặt hàng" component={Order} />
+        <Tab.Screen name="Cửa hàng" component={Res} />
+        <Tab.Screen name="Ưu đãi" component={Vch} />
+        <Tab.Screen name="Khác" component={Login} />
+      </Tab.Navigator>
+    </NavigationContainer>
+  )
+}
