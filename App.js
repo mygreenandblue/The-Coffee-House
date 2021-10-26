@@ -4,13 +4,14 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { View, Text, Button } from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import HomeLogin from './screens/listScr/homeLogin';
-import Order from './screens/listScr/order'
-import Res from './screens/listScr/restaurant'
+import HomeLogin from './Scr/screens/homeLogin';
+import Order from './Scr/screens/order'
+import Res from './Scr/screens/restaurant'
 // import Vch from './screens/component/voucher'
-import Login from './screens/listScr/Login'
-import Home from './screens/listScr/home';
-import Vch from './screens/listScr/voucher'
+import Login from './Scr/screens/Login'
+import Home from './Scr/screens/home'
+import Vch from './Scr/screens/voucher'
+import Menu from './Scr/screens/menu'
 export default function App() {
 
   const HomeStack = createNativeStackNavigator();
@@ -22,6 +23,8 @@ export default function App() {
       <HomeStack.Navigator>
         <HomeStack.Screen name="Home" component={HomeLogin} />
         <HomeStack.Screen name="Login" component={Login} />
+        <HomeStack.Screen name="HomeA" component={Home} />
+       
       </HomeStack.Navigator>
     );
   }
@@ -58,7 +61,7 @@ export default function App() {
         <Tab.Screen name="Đặt hàng" component={Order} />
         <Tab.Screen name="Cửa hàng" component={Res} />
         <Tab.Screen name="Ưu đãi" component={Vch} />
-        <Tab.Screen name="Khác" component={Login} />
+        <Tab.Screen name="Khác" component={Menu} />
       </Tab.Navigator>
     </NavigationContainer>
   )
