@@ -8,7 +8,7 @@ export default function Login({ navigation }) {
         <View>
             <Image source={require( '../img/backgroundLogin.png')} 
                    style={{ width: '100%', height: '25%' }}/>
-            <View style={styles.login}>
+            <View>
                 <View style={{ padding: 30 }}>
                     <Text style={{ color: '#000', fontWeight: '500', textAlign: 'center', fontSize: 16 }}> Chào mừng bạn đến với</Text>
                     <Image source={require('../img/logo-black.png')}
@@ -19,7 +19,7 @@ export default function Login({ navigation }) {
                         <View style={{ height: 25, alignSelf: 'center', borderRightWidth: 1, borderRightColor: '#CCC', margin: 20 }} ></View>
                         <TextInput style={{ flex: 1, fontSize: 16 }} placeholder="Nhập số điện thoại"/>
                     </View>
-                    <TouchableOpacity style={styles.signIn} onPress={() => navigation.navigate('Home')}>
+                    <TouchableOpacity style={styles.signIn} onPress={() => navigation.navigate('HomeA')}>
                         <Text style={{ fontSize: 16, color: '#fff' }}>Đăng nhập</Text>
                     </TouchableOpacity>
                     <View style={{flexDirection: 'row', alignItems: 'center', margin: 15}}>

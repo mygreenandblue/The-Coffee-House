@@ -111,7 +111,7 @@ export default function HomeLogin({ navigation }) {
                         <View style={ styles.dragBanner }>
                             <Image
                                 style={ styles.bannerImage }
-                                source={ require('../img/BANNER-HOME-APP-CA-PHE-TAI-NHA.jpg' )}/>
+                                source={{ uri: 'https://minio.thecoffeehouse.com/image/admin/banner-web-KETNOI-1200X480(1)_280533.jpg' }}/>
                         </View>
                         <Text style={ styles.titleDiscovery }>Khám phá thêm </Text>
                         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
