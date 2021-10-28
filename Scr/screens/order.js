@@ -79,7 +79,7 @@ const renderItem = ({ item }) => (
     </View>
 );
 
-export default function Booking() {
+export default function Order({ navigation }) {
     return (
         <SafeAreaView>
             <ScrollView showsVerticalScrollIndicator={false}>
@@ -110,24 +110,24 @@ export default function Booking() {
                     </View>
                     <Text style={{ marginHorizontal: 16, marginVertical: 16, fontSize: 18, fontWeight: '500', color: '#000' }}>Đã đặt gần đây</Text>
                     <View style={styles.recently}>
-                        <View style={styles.booked}>
+                        <TouchableOpacity style={styles.booked}>
                             <Image style={ styles.productsImages } 
                                 source={{ uri: 'https://minio.thecoffeehouse.com/image/admin/caphe-suada--bacsiu_063797_400x400.jpg' }}/>
                             <Text style={{ marginTop: 5 }}>Bạc xỉu {"\n"}đá</Text>
                             <Text style={{ marginTop: 5 }}>35.000đ</Text>
-                        </View>
-                        <View style={styles.booked}>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.booked}  onPress={() => navigation.navigate('Product')}>
                             <Image style={ styles.productsImages } 
                                    source={require('../img/matcha.jpg')}/>
                             <Text style={{ marginTop: 5 }}>Matcha đá {"\n"}xay</Text>
                             <Text style={{ marginTop: 5 }}>40.000đ</Text>
-                        </View>
-                        <View style={styles.booked}>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.booked}>
                             <Image style={ styles.productsImages } 
                                    source={{ uri: 'https://minio.thecoffeehouse.com/image/admin/cfdenda-espressoDa_647698_400x400.jpg'}}/>
                             <Text style={{ marginTop: 5 }}>Cà phê đen {"\n"}đá</Text>
                             <Text style={{ marginTop: 5 }}>32.000đ</Text>
-                        </View>
+                        </TouchableOpacity>
                     </View>
                     
                     <View>

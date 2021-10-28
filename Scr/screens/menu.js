@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image, View, Text, TouchableOpacity, SafeAreaView, ScrollView, StyleSheet } from 'react-native'
+import { View, Text, TouchableOpacity, SafeAreaView, ScrollView, StyleSheet } from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 export default function Menu() {

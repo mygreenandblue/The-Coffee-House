@@ -72,14 +72,14 @@ const renderItem = ({ item }) => (
     </View>
 );
 
-export default function StoreLocation() {
+export default function Restaurant() {
     return (
         <SafeAreaView>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={{backgroundColor: '#EEE'}}>
                     <View style={{backgroundColor: '#FFF', flexDirection: 'row',}}>
                         <View>
-                            <Ionicons name="ios-search-outline" size={20} color="grey" style={styles.icon}/> 
+                            <Ionicons name="search-outline" size={20} color="grey" style={styles.icon}/> 
                             <TextInput style={styles.input} placeholder="Tìm kiếm"/>
                         </View>
                         <TouchableOpacity style={styles.btnMap}>

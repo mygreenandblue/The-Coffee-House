@@ -2,7 +2,7 @@ import React from 'react'
 import { Image, ImageBackground, View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 
-export default function CodeUsers() {
+export default function UserCard() {
     return (
         <View style={styles.userInfo}>
             <TouchableOpacity>

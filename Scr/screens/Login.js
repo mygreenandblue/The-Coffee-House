@@ -19,7 +19,7 @@ export default function Login({ navigation }) {
                         <View style={{ height: 25, alignSelf: 'center', borderRightWidth: 1, borderRightColor: '#CCC', margin: 20 }} ></View>
                         <TextInput style={{ flex: 1, fontSize: 16 }} placeholder="Nhập số điện thoại"/>
                     </View>
-                    <TouchableOpacity style={styles.signIn} onPress={() => navigation.navigate('HomeA')}>
+                    <TouchableOpacity style={styles.signIn} onPress={() => navigation.navigate('Home')}>
                         <Text style={{ fontSize: 16, color: '#fff' }}>Đăng nhập</Text>
                     </TouchableOpacity>
                     <View style={{flexDirection: 'row', alignItems: 'center', margin: 15}}>

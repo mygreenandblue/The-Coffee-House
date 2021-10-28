@@ -3,6 +3,7 @@ import { Dimensions, FlatList, Image, ImageBackground, View, Text, TouchableOpac
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import styles from '../styles/homeStyle'
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import Container from '../components/container';
 
 const { WIDTH, HEIGHT } = Dimensions.get('window')
 
@@ -86,7 +87,7 @@ export default function HomeLogin({ navigation }) {
                         <TouchableOpacity style={{ backgroundColor:'#e87800', borderRadius: 8, width: 180, height: 40, alignSelf: 'center', marginTop: 10 }}  onPress={() => navigation.navigate('Login')} >
                             <Text style={{ color: '#fff', textAlign: 'center', padding: 8, fontWeight: 'bold', fontSize: 16 }}>Đăng Nhập</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={{ borderColor: '#000', borderWidth: 1, borderRadius: 8, width: 330, height: 50, alignSelf: 'center', marginTop: 100, flexDirection: 'row' }}>
+                        <TouchableOpacity style={{ borderColor: '#aaa', borderWidth: 1, borderRadius: 8, width: 330, height: 50, alignSelf: 'center', marginTop: 100, flexDirection: 'row' }}>
                             <Text style={{ color: '#000', padding: 10, fontWeight: '500', }}>The Coffe House's Reward</Text>
                             <Ionicons name="chevron-forward-outline" size={20} color='#000'
                                       style={{ padding: 10, marginLeft: 90 }}/>
@@ -108,11 +109,7 @@ export default function HomeLogin({ navigation }) {
                                 <Text style={{ color: '#000', textAlign: 'center' }}>Mang đi</Text>
                             </TouchableOpacity>
                         </View>
-                        <View style={ styles.dragBanner }>
-                            <Image
-                                style={ styles.bannerImage }
-                                source={{ uri: 'https://minio.thecoffeehouse.com/image/admin/banner-web-KETNOI-1200X480(1)_280533.jpg' }}/>
-                        </View>
+                        <View><Container/></View>
                         <Text style={ styles.titleDiscovery }>Khám phá thêm </Text>
                         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                             <View style={ styles.dragDiscovery }>

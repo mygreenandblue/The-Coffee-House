@@ -2,7 +2,8 @@ import React from 'react'
 import { Dimensions, FlatList, Image, ImageBackground, View, Text, TouchableOpacity, SafeAreaView, ScrollView} from 'react-native'
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import styles from '../styles/homeStyle'
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import UserCard from '../components/userCard';
+import Container from '../components/container';
 
 const { WIDTH, HEIGHT } = Dimensions.get('window')
 
@@ -84,16 +85,7 @@ export default function Home() {
                     <View style={styles.codeUser}>
                         <TouchableOpacity>
                             <ImageBackground source={ require('../img/backgroundCodeUser.png' )} resizeMode='contain'>
-                            <View style={styles.addPoint}>
-                            <FontAwesome name="angle-double-down" size={20} color="#fff" />
-                                <Text style={{ color: '#FFF', fontWeight:'bold' }}>Tích điểm</Text>
-                            </View>
-                            <Text style={[styles.codeInfo, { fontSize: 18, fontWeight: 'bold', }]}>Cong Giap</Text>
-                            <Text style={[styles.codeInfo,{ marginBottom: 24, fontWeight: '500' }]}>0 BEAN </Text>
-                            <View style={styles.code}>
-                                <Image source={require( '../img/barcode.gif' )} style={styles.barcode} />
-                                <Text style={{ textAlign: 'center', margin: 10 }}>M161516289</Text>
-                            </View>
+                                <UserCard/>
                             </ImageBackground>
                         </TouchableOpacity>
                     </View>
@@ -114,11 +106,7 @@ export default function Home() {
                                 <Text style={{ color: '#000', textAlign: 'center' }}>Mang đi</Text>
                             </TouchableOpacity>
                         </View>
-                        <View style={ styles.dragBanner }>
-                            <Image
-                                style={ styles.bannerImage }
-                                source={ require('../img/BANNER-HOME-APP-CA-PHE-TAI-NHA.jpg' )}/>
-                        </View>
+                        <View><Container/></View>
                         <Text style={ styles.titleDiscovery }>Khám phá thêm </Text>
                         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                             <View style={ styles.dragDiscovery }>
