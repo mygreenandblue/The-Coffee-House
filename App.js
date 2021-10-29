@@ -7,7 +7,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons'
 import Home from './Scr/screens/home';
 import Order from './Scr/screens/order';
 import Restaurant from './Scr/screens/restaurant';
-import Voucher from './Scr/screens/voucher';
+import Coupons from './Scr/screens/Coupons';
 import Menu from './Scr/screens/menu';
 import HomeLogin from './Scr/screens/homeLogin';
 import Login from './Scr/screens/Login';
@@ -59,7 +59,7 @@ export default function App() {
         <Tab.Screen name="Trang chủ" component={HomeStackScreen} />
         <Tab.Screen name="Đặt hàng" component={Order} />
         <Tab.Screen name="Cửa hàng" component={Restaurant} />
-        <Tab.Screen name="Ưu đãi" component={Voucher} />
+        <Tab.Screen name="Ưu đãi" component={Coupons} />
         <Tab.Screen name="Khác" component={Menu} />
 
       </Tab.Navigator>

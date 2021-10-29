@@ -6,7 +6,7 @@ import styles from '../styles/vchStyles'
 import UserCard from '../components/userCard'
 import VoucherList from '../components/voucherList'
 
-export default function Voucher() {
+export default function Coupons() {
     return (
         <SafeAreaView>
             <ScrollView
