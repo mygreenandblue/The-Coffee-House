@@ -36,15 +36,15 @@ export default function App() {
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
           
-          if (route.name === 'Trang chủ') {
+          if (route.name === 'Home') {
             iconName = focused ? 'home' : 'home-outline';
-          } else if (route.name === 'Đặt hàng') {
+          } else if (route.name === 'Order') {
             iconName = focused ? 'cafe' : 'cafe-outline';
-          } else if (route.name === 'Cửa hàng') {
+          } else if (route.name === 'Store') {
             iconName = focused ? 'search' : 'search-outline';
-          } else if (route.name === 'Ưu đãi') {
+          } else if (route.name === 'Voucher') {
             iconName = focused ? 'gift' : 'gift-outline';
-          } else if (route.name === 'Khác') {
+          } else if (route.name === 'Menu') {
             iconName = focused ? 'reorder' : 'reorder-four-outline';
           }
           

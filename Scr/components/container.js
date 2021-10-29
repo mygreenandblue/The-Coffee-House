@@ -7,7 +7,6 @@ const ContainerList = [
     'https://feed.thecoffeehouse.com//content/images/2021/10/BANNER-APP.jpg',
     'https://minio.thecoffeehouse.com/image/admin/bannerhomeWEB-Caphetainha_409405.jpg',
     'https://feed.thecoffeehouse.com//content/images/2021/10/APP-NEWS-khoi-dau.jpg',
-    'https://minio.thecoffeehouse.com/image/admin/banner-web-KETNOI-1200X480(1)_280533.jpg',
 ]
 
 const WIDTH = Dimensions.get('window').width;
@@ -38,8 +37,8 @@ export default function Container() {
                             showsHorizontalScrollIndicator={false} pagingEnabled
                             horizontal style={styles.wrap}>
                     {
-                        ContainerList.map((e, index) => 
-                        <Image key={e} resizeMode='stretch' style={styles.wrap} source={{uri :e}}/>)
+                        ContainerList.map((a, index) => 
+                        <Image key={a} resizeMode='stretch' style={styles.wrap} source={{uri :a}}/>)
                     }
                 </ScrollView>
 
