@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text, TouchableOpacity, SafeAreaView, ScrollView } from 'react-native'
 
 import Ionicons from 'react-native-vector-icons/Ionicons'
-import styles from '../styles/vchStyles'
+import styles from '../styles/CouponStyle'
 import UserCard from '../components/userCard'
 import VoucherList from '../components/voucherList'
 

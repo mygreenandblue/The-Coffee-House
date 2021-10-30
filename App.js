@@ -33,6 +33,7 @@ export default function App() {
     <NavigationContainer>
       <Tab.Navigator
       screenOptions={({ route }) => ({
+        keyboardHidesTabBar: true,
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
           
