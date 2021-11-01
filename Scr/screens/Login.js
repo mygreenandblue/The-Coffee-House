@@ -17,7 +17,7 @@ export default function Login({ navigation }) {
                         <Image source={require('../img/VietNamFlag.png')} style={styles.ImageStyle}/>
                         <Text style={{ color: '#000', fontWeight: '400', marginLeft: 5, fontSize: 16 }}>+84</Text>
                         <View style={{ height: 25, alignSelf: 'center', borderRightWidth: 1, borderRightColor: '#CCC', margin: 20 }} ></View>
-                        <TextInput style={{ flex: 1, fontSize: 16 }} placeholder="Nhập số điện thoại"/>
+                        <TextInput style={{ flex: 1, fontSize: 16 }} placeholder="Nhập số điện thoại" keyboardType='phone-pad'/>
                     </View>
                     <TouchableOpacity style={styles.signIn} onPress={() => navigation.navigate('Home')}>
                         <Text style={{ fontSize: 16, color: '#fff' }}>Đăng nhập</Text>
@@ -40,7 +40,7 @@ export default function Login({ navigation }) {
                                style={{ width: 20, height: 20 }} /> 
                         <Text style={{ fontSize: 16, color: '#000', marginLeft: 5 }}>Tiếp tục bằng Google</Text>
                     </TouchableOpacity>
-                    <Text style={{ fontWeight: '400', fontSize: 16, color: 'black', textAlign: 'center', marginTop: 10 }}>Tiếng Việt</Text>
+                   
                 </View>
             </View>
         </View>
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: 'blue',
         padding: 12,
-        marginTop: 5
+        marginTop: 8
     },
     Google: {
         borderWidth: 1,
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#fff',
         padding: 12,
-        marginTop: 5
+        marginTop: 8
     }
 })
 

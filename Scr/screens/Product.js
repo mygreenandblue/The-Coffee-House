@@ -3,7 +3,7 @@ import { Image, View, Text, TextInput, TouchableOpacity, SafeAreaView, ScrollVie
 import Ionicons from 'react-native-vector-icons/Ionicons'
     
 
-function Product() {
+function Product({ navigation }) {
 const [count, setCount] = useState(1);
     const onPress1 = () => { setCount(count + 1) };
     const onPress2 = () => { setCount(count - 1) };
@@ -66,7 +66,7 @@ const [count, setCount] = useState(1);
                                 <Text style={styles.addMore}>+</Text>
                             </TouchableWithoutFeedback>
                         </View>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigation.navigate('Cart')}>
                             <Text style={styles.addToCart}>Chọn sản phẩm</Text>
                         </TouchableOpacity>
                     </View>

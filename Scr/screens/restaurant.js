@@ -72,7 +72,7 @@ const renderItem = ({ item }) => (
     </View>
 );
 
-export default function Restaurant() {
+export default function Restaurant({ navigation }) {
     return (
         <SafeAreaView>
             <ScrollView showsVerticalScrollIndicator={false}>
@@ -88,15 +88,15 @@ export default function Restaurant() {
                         </TouchableOpacity>
                     </View>
                     <Text style={styles.titleContent}>Cửa hàng gần bạn</Text>
-                    <View style={styles.snhome}>
-                        <Image style={styles.locationImages}
+                    <TouchableOpacity style={styles.snhome} onPress={() => navigation.navigate('ResDetail')}>
+                        <Image style={styles.locationImages} 
                                source={{ uri: 'https://bloganchoi.com/wp-content/uploads/2019/12/ha-dong.jpg' }}/>
                         <View style={styles.locationInfo}>
                             <Text style={styles.name}>the coffee house</Text>
                             <Text style={styles.location}>492 Nguyễn Thị Thập, Quận 7, Hồ Chí Minh, Việt Nam</Text>
                             <Text style={styles.distance}>Cách đây 0 km</Text>
                         </View>
-                    </View>
+                    </TouchableOpacity>
                     <Text style={styles.titleContent}>Các cửa hàng khác</Text>
                     <FlatList
                             data={storeLocationList}

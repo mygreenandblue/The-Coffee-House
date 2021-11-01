@@ -23,40 +23,52 @@ export default function Menu() {
                         <Text style={styles.utTitle}>Nhạc đang phát</Text>
                     </TouchableOpacity>
                     <Text style={styles.title}> Hỗ trợ</Text>
-                    <TouchableOpacity style={{ backgroundColor: '#fff',  borderRadius: 8, padding: 15, marginTop: 8, flexDirection: 'row' }}>
-                        <Ionicons name="star-outline" size={20} color="#000" style={styles.utContent}/>
-                        <Text style={ styles.support }>Đánh giá đơn hàng</Text>
-                        <Ionicons name="chevron-forward-outline" size={12} color='#000' style={{ flexDirection: 'column', marginLeft: 180, alignSelf: 'center' }}/>
+                    <TouchableOpacity style={{ backgroundColor: '#fff',  borderRadius: 8, padding: 15, marginTop: 8, flexDirection: 'row', justifyContent: 'space-between' }}>
+                        <View style={{ flexDirection: 'row' }}>
+                            <Ionicons name="star-outline" size={20} color="#000" />
+                            <Text style={ styles.support }>Đánh giá đơn hàng</Text>
+                        </View>
+                        <Ionicons name="chevron-forward-outline" size={12} color='#000' />
                     </TouchableOpacity>
                     <View style={{  borderColor: 'grey', borderWidth: 0.5, marginLeft: 5, marginRight: 5 }} />
-                    <TouchableOpacity style={{ backgroundColor: '#fff',  borderRadius: 8, padding: 15, flexDirection: 'row' }}>
-                        <Ionicons name="star-outline" size={20} color="#000" style={styles.utContent}/>
-                        <Text style={ styles.support }>Đánh giá đơn hàng</Text>
-                        <Ionicons name="chevron-forward-outline" size={12} color='#000' style={{ flexDirection: 'column', marginLeft: 180, alignSelf: 'center' }}/>
+                    <TouchableOpacity style={{ backgroundColor: '#fff',  borderRadius: 8, padding: 15, flexDirection: 'row', justifyContent: 'space-between' }}>
+                        <View style={{ flexDirection: 'row' }}>
+                            <Ionicons name="chatbox-outline" size={20} color="#000" />
+                            <Text style={ styles.support }>Liên hệ và góp ý</Text>
+                        </View>
+                        <Ionicons name="chevron-forward-outline" size={12} color='#000' />
                     </TouchableOpacity>
                     <Text style={styles.title}>Tài khoản</Text>
-                    <TouchableOpacity style={{ backgroundColor: '#fff',  borderRadius: 8, padding: 15, marginTop: 8, flexDirection: 'row' }}>
-                        <Ionicons name="person-outline" size={20} color="#000" style={styles.utContent}/>
-                        <Text style={ styles.support }>Thông tin cá nhân</Text>
-                        <Ionicons name="chevron-forward-outline" size={12} color='#000' style={{ marginLeft: 185, alignSelf: 'center' }}/>
+                    <TouchableOpacity style={{ backgroundColor: '#fff',  borderRadius: 8, padding: 15, marginTop: 8, flexDirection: 'row', justifyContent: 'space-between' }}>
+                        <View style={{ flexDirection: 'row' }}>
+                            <Ionicons name="person-outline" size={20} color="#000" />
+                            <Text style={ styles.support }>Thông tin cá nhân</Text>
+                        </View>
+                        <Ionicons name="chevron-forward-outline" size={12} color='#000' />
                     </TouchableOpacity>
                     <View style={{  borderColor: 'grey', borderWidth: 0.5, marginLeft: 5, marginRight: 5 }} />
-                    <TouchableOpacity style={{ backgroundColor: '#fff',  borderRadius: 8, padding: 15, flexDirection: 'row' }}>
-                        <Ionicons name="bookmark-outline" size={20} color="#000" style={styles.utContent}/>
-                        <Text style={ styles.support }>Địa chỉ đã lưu</Text>
-                        <Ionicons name="chevron-forward-outline" size={12} color='#000' style={{ marginLeft: 210, alignSelf: 'center' }}/>
+                    <TouchableOpacity style={{ backgroundColor: '#fff',  borderRadius: 8, padding: 15, flexDirection: 'row', justifyContent: 'space-between' }}>
+                        <View style={{ flexDirection: 'row' }}>
+                            <Ionicons name="bookmark-outline" size={20} color="#000" />
+                            <Text style={ styles.support }>Địa chỉ đã lưu</Text>
+                        </View>
+                        <Ionicons name="chevron-forward-outline" size={12} color='#000' />
                     </TouchableOpacity>
                     <View style={{  borderColor: 'grey', borderWidth: 0.5, marginLeft: 5, marginRight: 5 }} />
-                    <TouchableOpacity style={{ backgroundColor: '#fff',  borderRadius: 8, padding: 15, flexDirection: 'row' }}>
-                        <Ionicons name="settings-outline" size={20} color="#000" style={styles.utContent}/>
-                        <Text style={ styles.support }>Cài đặt</Text>
-                        <Ionicons name="chevron-forward-outline" size={12} color='#000' style={{ marginLeft: 250, alignSelf: 'center' }}/>
+                    <TouchableOpacity style={{ backgroundColor: '#fff',  borderRadius: 8, padding: 15, flexDirection: 'row', justifyContent: 'space-between' }}>
+                        <View style={{ flexDirection: 'row' }}>
+                            <Ionicons name="settings-outline" size={20} color="#000" />
+                            <Text style={ styles.support }>Cài đặt</Text>
+                        </View>
+                        <Ionicons name="chevron-forward-outline" size={12} color='#000' />
                     </TouchableOpacity>
                     <View style={{  borderColor: 'grey', borderWidth: 0.5, marginLeft: 5, marginRight: 5 }} />
-                    <TouchableOpacity style={{ backgroundColor: '#fff',  borderRadius: 8, padding: 15, flexDirection: 'row' }}>
-                        <Ionicons name="log-out-outline" size={20} color="#000" style={styles.utContent}/>
-                        <Text style={ styles.support }>Đăng xuất</Text>
-                        <Ionicons name="chevron-forward-outline" size={12} color='#000' style={{ marginLeft: 231, alignSelf: 'center' }}/>
+                    <TouchableOpacity style={{ backgroundColor: '#fff',  borderRadius: 8, padding: 15, flexDirection: 'row', justifyContent: 'space-between' }}>
+                        <View style={{ flexDirection: 'row' }}>
+                            <Ionicons name="log-out-outline" size={20} color="#000" />
+                            <Text style={ styles.support }>Đăng xuất</Text>
+                        </View>
+                        <Ionicons name="chevron-forward-outline" size={12} color='#000' />
                     </TouchableOpacity>
 
                 </View> 
@@ -76,9 +88,6 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         padding: 12, width: 186
     },
-    uticon: {
-
-    },
     utTitle: {
         color: '#000',
         marginTop: 10
@@ -86,7 +95,7 @@ const styles = StyleSheet.create({
     support: {
         textAlign: 'center',
         color: '#000',
-        marginLeft: 15
+        marginLeft: 10
     },
 
 })

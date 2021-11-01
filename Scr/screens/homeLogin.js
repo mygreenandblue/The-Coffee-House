@@ -121,7 +121,7 @@ export default function HomeLogin({ navigation }) {
                                 </TouchableOpacity>
                                 <TouchableOpacity>
                                     <Text style={ styles.btnDiscovery }>#CoffeeLover</Text>
-                                </TouchableOpacity>
+                                </TouchableOpacity> 
                                 <TouchableOpacity>
                                     <Text style={ styles.btnDiscovery }>Quà tặng từ nhà</Text>
                                 </TouchableOpacity>

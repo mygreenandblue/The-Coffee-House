@@ -12,6 +12,8 @@ import Menu from './Scr/screens/menu';
 import HomeLogin from './Scr/screens/homeLogin';
 import Login from './Scr/screens/Login';
 import Product from './Scr/screens/Product';
+import ResDetail from './Scr/screens/ResDetail';
+import Cart from './Scr/screens/cart';
 
 export default function App() {
 
@@ -22,9 +24,12 @@ export default function App() {
     return (
       <HomeStack.Navigator>
         <HomeStack.Screen name="HomeLogin" component={HomeLogin} />
-        <HomeStack.Screen name="Login" component={Login} />
+        <HomeStack.Screen name="Login" component={Login} options={{ headerShown: false, }} />
         <HomeStack.Screen name="Home" component={Home} />
         <HomeStack.Screen name="Product" component={Product} />
+        <HomeStack.Screen name="ResDetail" component={ResDetail} />
+        <HomeStack.Screen name="Order" component={Order} />
+        <HomeStack.Screen name="Cart" component={Cart} />
       </HomeStack.Navigator>
     );
   }
@@ -33,19 +38,18 @@ export default function App() {
     <NavigationContainer>
       <Tab.Navigator
       screenOptions={({ route }) => ({
-        keyboardHidesTabBar: true,
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
           
-          if (route.name === 'Home') {
+          if (route.name === 'Trang chủ') {
             iconName = focused ? 'home' : 'home-outline';
-          } else if (route.name === 'Order') {
+          } else if (route.name === 'Đặt hàng') {
             iconName = focused ? 'cafe' : 'cafe-outline';
-          } else if (route.name === 'Store') {
+          } else if (route.name === 'Cửa hàng') {
             iconName = focused ? 'search' : 'search-outline';
-          } else if (route.name === 'Voucher') {
+          } else if (route.name === 'Ưu đãi') {
             iconName = focused ? 'gift' : 'gift-outline';
-          } else if (route.name === 'Menu') {
+          } else if (route.name === 'Khác') {
             iconName = focused ? 'reorder' : 'reorder-four-outline';
           }
           
