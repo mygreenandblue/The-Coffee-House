@@ -1,8 +1,8 @@
-import React from 'react'
-import { FlatList, Image, View, Text, TextInput, TouchableOpacity, SafeAreaView, ScrollView } from 'react-native'
+import React, {useState} from 'react'
+import { Dimensions, FlatList, Image, View, Text, TextInput, TouchableOpacity, SafeAreaView, ScrollView, Button, ImageBackground } from 'react-native'
 import styles from '../styles/orderStyle'
 import Ionicons from 'react-native-vector-icons/Ionicons';
-
+import Modal from "react-native-modal";
 
 const productsList = [
     {
@@ -71,19 +71,22 @@ const renderItem = ({ item }) => (
                 <Text style={ styles.description } numberOfLines={2} ellipsizeMode= 'tail'>{item?.description}</Text>
                 <Text style={{ marginTop: 8, color: '#000' }}>{item?.price}</Text>
             </View>
-            <Image
-            style={ styles.productsImages }
-            source={{ uri: item?.photo }}
-            />
+            <Image style={ styles.productsImages } source={{ uri: item?.photo }}/>
         </TouchableOpacity>
     </View>
 );
 
 export default function Order({ navigation }) {
+    const [isModalVisible, setModalVisible] = useState(false);
+
+    const toggleModal = () => {
+    setModalVisible(!isModalVisible);
+  };
     return (
         <SafeAreaView>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={{ backgroundColor: '#EEE' }}>
+              
                     <View style={[ styles.headerBar, {paddingTop: 8} ]}>
                         <Image
                             style={styles.icon}
@@ -98,9 +101,78 @@ export default function Order({ navigation }) {
                     </View>
                     <View style={[ styles.headerBar, {paddingBottom: 16} ]}>
                         <TextInput style={styles.input} placeholder="Thực đơn"/>
-                        <View style={styles.searchBar}>
-                            <Ionicons name="ios-chevron-down" size={20} color="grey"/> 
-                        </View>
+                        
+                            <TouchableOpacity style={styles.searchBar} title="Show modal" onPress={toggleModal}>
+                                <Ionicons name="ios-chevron-down" size={20} color="grey" /> 
+                            </TouchableOpacity>
+
+                            <Modal isVisible={isModalVisible} style={{ marginTop: '45%', width: '100%', alignSelf: 'center', }}>
+                                <View style={{ backgroundColor: '#fff', borderTopLeftRadius: 12, borderTopRightRadius: 12,  }}>
+                                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', height: 60, padding: 10,}}>
+                                        <Text></Text>
+                                        <Text style={{ fontSize: 20, color: '#000', alignSelf: 'center' }}>Thực đơn</Text>
+                                        <TouchableOpacity  onPress={toggleModal} style={{ alignSelf: 'center' }}>
+                                            <Ionicons name="close" size={25} color='#000' /> 
+                                        </TouchableOpacity>
+                                    </View>
+                                    <View>
+                                        <View style={{ backgroundColor: '#ccc', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-around', }}>
+                                            <TouchableOpacity style={styles.groupProducts}>
+                                                <View style={{ padding: 10, flexDirection: 'row' }}>
+                                                    <ImageBackground resizeMode='contain' style={{ width: 60, height: 60, borderRadius: 30, alignSelf: 'center' ,backgroundColor: '#e9d8a6', }} 
+                                                            source={{ uri: 'https://minio.thecoffeehouse.com/image/tch-web-order/category-thumbnails/cg_coffee_web.png'}}/>
+                                                    <Text style={styles.grTitle}>Đang được {"\n"}yêu thích</Text>
+                                                </View>
+                                            </TouchableOpacity>
+                                            <TouchableOpacity style={styles.groupProducts}>
+                                                <View style={{ padding: 10, flexDirection: 'row' }}>
+                                                    <ImageBackground resizeMode='contain' style={{ width: 60, height: 60, borderRadius: 30, alignSelf: 'center' ,backgroundColor: '#e9d8a6', }} 
+                                                            source={{ uri: 'https://minio.thecoffeehouse.com/image/tch-web-order/category-thumbnails/cg_coffee_web.png'}}/>
+                                                    <Text style={styles.grTitle}>Đang được {"\n"}yêu thích</Text>
+                                                </View>
+                                            </TouchableOpacity>
+                                            <TouchableOpacity style={styles.groupProducts}>
+                                                <View style={{ padding: 10, flexDirection: 'row' }}>
+                                                    <ImageBackground resizeMode='contain' style={{ width: 60, height: 60, borderRadius: 30, alignSelf: 'center' ,backgroundColor: '#e9d8a6', }} 
+                                                            source={{ uri: 'https://minio.thecoffeehouse.com/image/tch-web-order/category-thumbnails/cg_coffee_web.png'}}/>
+                                                    <Text style={styles.grTitle}>Đang được {"\n"}yêu thích</Text>
+                                                </View>
+                                            </TouchableOpacity>
+                                            <TouchableOpacity style={styles.groupProducts}>
+                                                <View style={{ padding: 10, flexDirection: 'row' }}>
+                                                    <ImageBackground resizeMode='contain' style={{ width: 60, height: 60, borderRadius: 30, alignSelf: 'center' ,backgroundColor: '#e9d8a6', }} 
+                                                            source={{ uri: 'https://minio.thecoffeehouse.com/image/tch-web-order/category-thumbnails/cg_coffee_web.png'}}/>
+                                                    <Text style={styles.grTitle}>Đang được {"\n"}yêu thích</Text>
+                                                </View>
+                                            </TouchableOpacity>
+                                            <TouchableOpacity style={styles.groupProducts}>
+                                                <View style={{ padding: 10, flexDirection: 'row' }}>
+                                                    <ImageBackground resizeMode='contain' style={{ width: 60, height: 60, borderRadius: 30, alignSelf: 'center' ,backgroundColor: '#e9d8a6', }} 
+                                                            source={{ uri: 'https://minio.thecoffeehouse.com/image/tch-web-order/category-thumbnails/cg_coffee_web.png'}}/>
+                                                    <Text style={styles.grTitle}>Đang được {"\n"}yêu thích</Text>
+                                                </View>
+                                            </TouchableOpacity>
+                                            <TouchableOpacity style={styles.groupProducts}>
+                                                <View style={{ padding: 10, flexDirection: 'row' }}>
+                                                    <ImageBackground resizeMode='contain' style={{ width: 60, height: 60, borderRadius: 30, alignSelf: 'center' ,backgroundColor: '#e9d8a6', }} 
+                                                            source={{ uri: 'https://minio.thecoffeehouse.com/image/tch-web-order/category-thumbnails/cg_coffee_web.png'}}/>
+                                                    <Text style={styles.grTitle}>Đang được {"\n"}yêu thích</Text>
+                                                </View>
+                                            </TouchableOpacity>
+                                        </View>
+                                        <View style={{ backgroundColor: '#ccc',paddingLeft: 10, flexDirection: 'row', height: '39%'}}>
+                                            <TouchableOpacity style={styles.groupProducts}>
+                                                <View style={{ padding: 10, flexDirection: 'row' }}>
+                                                    <ImageBackground resizeMode='contain' style={{ width: 60, height: 60, borderRadius: 30, alignSelf: 'center' ,backgroundColor: '#e9d8a6', }} 
+                                                            source={{ uri: 'https://minio.thecoffeehouse.com/image/tch-web-order/category-thumbnails/cg_coffee_web.png'}}/>
+                                                    <Text style={styles.grTitle}>Đang được {"\n"}yêu thích</Text>
+                                                </View>
+                                            </TouchableOpacity>
+                                        </View>
+                                    </View>
+                                </View>
+                            </Modal>
+                            
                         <TouchableOpacity style={styles.ionIcons}>
                             <Ionicons name="ios-search-outline" size={20} color="grey"/> 
                         </TouchableOpacity>

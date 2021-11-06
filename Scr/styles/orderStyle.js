@@ -1,5 +1,4 @@
-import { StyleSheet } from 'react-native'
-
+import { StyleSheet, } from 'react-native'
 const styles = StyleSheet.create({
     headerBar: {
         backgroundColor: '#FFF',
@@ -41,6 +40,21 @@ const styles = StyleSheet.create({
         backgroundColor: '#EEE',
         borderRadius: 10,
     },
+    groupProducts: {
+        backgroundColor: '#fff',
+        width: 190,
+        height: 80,
+        borderRadius: 12,
+        marginTop: 12,
+        flexDirection: 'row',
+        
+    },
+    grTitle: {
+        color: '#000',
+        fontWeight: 'bold',
+        alignSelf: 'center',
+        marginLeft: 8
+    },
     recently: {
         flexDirection: 'row',
         justifyContent: 'space-between', 
@@ -74,7 +88,7 @@ const styles = StyleSheet.create({
         width: 80,
         height: 80,
         borderRadius: 8,
-    }
+    },
 })
 
 export default styles;
